@@ -1,16 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather API</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha184-9aIt2nRpC15Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
-    <script src="jquery-3.5.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
+
 <body>
-    
+    <header class="card-header">
+        <h1 class='title'>Weather Dashboard</h1>
+    </header>
+
+    <aside>
+        <h5>Search for a City:</h5>
+        <div>
+            <input type="text" class="form-control" id="inputPassword2" style="width: 11rem;">
+            <button type="button" class="searchBtn btn-primary">
+                <ion-icon id="btn" name="search-outline"></ion-icon>
+            </button>
+        </div>
+        <div class="card" style="width: 15rem;">
+            <ul class="list-group list-group-flush">
+                <button class="list-group-item" data-search="Abilene">Abilene</button>
+                <button class="list-group-item" data-search="Boston">Boston</button>
+                <button class="list-group-item" data-search="Phoenix">Phoenix</button>
+            </ul>
+        </div>
+    </aside>
+
+    <div class="weather">
+        <div class="card mainC" id="resultsCard">
+        </div>
+        <br>
+        <h3></h3>
+        <div class="row">
+            <div class="col-lg-2">
+                <div class="card text-white bg-primary mb-3" style="width: 12rem;" id="forecast5">
+                    <div class="card-body" id="day1">
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <div class="card text-white bg-primary mb-3" style="width: 12rem;" id="forecast5">
+                    <div class="card-body" id="day2">
+                    </div>
+                </div>
+            </div><div class="col-lg-2">
+                <div class="card text-white bg-primary mb-3" style="width: 12rem;" id="forecast5">
+                    <div class="card-body" id="day3">
+                    </div>
+                </div>
+            </div><div class="col-lg-2">
+                <div class="card text-white bg-primary mb-3" style="width: 12rem;" id="forecast5">
+                    <div class="card-body" id="day4">
+                    </div>
+                </div>
+            </div><div class="col-lg-2">
+                <div class="card text-white bg-primary mb-3" style="width: 12rem;" id="forecast5">
+                    <div class="card-body" id="day5">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
 </body>
+
 </html>

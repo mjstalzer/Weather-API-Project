@@ -1,0 +1,60 @@
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.card-header {
+    background-color: slategrey;
+}
+.title{
+    color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: thin;
+    text-align: center;
+}
+
+aside {
+    width: 20%;
+    background-color: whitesmoke;
+    padding: 15px;
+    float: left;
+    margin-right: 2%;
+}
+
+.form-control {
+    float: left;
+    margin-bottom: 15px;
+}
+
+.weather {
+    padding: 10px;
+    margin-right: 2%;
+    background-color: whitesmoke;
+    margin-left: 20rem;
+}
+
+.mainC {
+    padding: 15px;
+}
+
+.mainC h2 {
+    margin-bottom: 15px;
+}
+
+.col-lg-2 {
+    margin: 15px;
+}
+
+.list-group-item {
+    text-align: left;
+}
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.yellow {
+    background-color: yellow;
+}
