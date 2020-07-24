@@ -138,11 +138,12 @@ function AJAX(newCity) {
             $(uvP).append(uvB)
         })
 
-    }).catch(function(error){
-        console.log(error)
-        $(".col-lg-2").remove();
-        alert("Not a valid city.")
-    });
+    })
+    // .catch(function(error){
+    //     console.log(error)
+    //     $(".col-lg-2").remove();
+    //     alert("Not a valid city.")
+    // });
     var forecastURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityAPI + "&appid=" + apiKey
 
     $.ajax({
