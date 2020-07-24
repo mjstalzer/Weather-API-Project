@@ -174,4 +174,5 @@ function AJAX(newCity) {
         }
     });
 }
+// <!-- this works -->
 
