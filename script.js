@@ -79,7 +79,7 @@ function AJAX(newCity) {
     var cityAPI = (newCity.charAt(0).toUpperCase() + newCity.slice(1))
     var apiKey = "0659bcfbc663939009bde73b4afdb4fc"
 
-    var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + cityAPI + "&appid=" + apiKey
+    var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityAPI + "&appid=" + apiKey
 
     $.ajax({
         "url": queryURL,
@@ -113,7 +113,7 @@ function AJAX(newCity) {
         var lon = response.coord.lon
 
         $.ajax({
-            "url": "http://api.openweathermap.org/data/2.5/uvi/forecast?appid=" + apiKey + "&lat=" + lat + "&lon=" + lon,
+            "url": "https://api.openweathermap.org/data/2.5/uvi/forecast?appid=" + apiKey + "&lat=" + lat + "&lon=" + lon,
             "method": "GET"
         }).then(function (UV) {
 
@@ -142,7 +142,7 @@ function AJAX(newCity) {
     //     $(".col-lg-2").remove();
     //     alert("Not a valid city.")
     // });
-    var forecastURL = "http://api.openweathermap.org/data/2.5/forecast?q=" + cityAPI + "&appid=" + apiKey
+    var forecastURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityAPI + "&appid=" + apiKey
 
     $.ajax({
         "url": forecastURL,
