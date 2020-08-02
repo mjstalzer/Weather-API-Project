@@ -31,9 +31,9 @@ $(".searchBtn").on("click", function () {
         var store = $(this).siblings().val()
         var stored = store.charAt(0).toUpperCase() + store.slice(1)
 
-        console.log(stored)
+
         getItem = JSON.parse(localStorage.getItem("city")) || []
-        console.log(getItem)
+
         getItem.push(stored)
         localStorage.setItem("city", JSON.stringify(getItem))
 
@@ -69,7 +69,6 @@ storage();
 $("ul").on("click", ".list-group-item", function () {
     event.preventDefault();
     var attr = $(this).attr("data-search")
-    console.log(attr)
     AJAX(attr);
 })
 
@@ -86,7 +85,6 @@ function AJAX(newCity) {
         "url": queryURL,
         "method": "GET"
     }).then(function (response) {
-        console.log(response)
         // <-------------------------------> \\ 
         var kelvin = (response.main.temp)
         var fahrenheit = (kelvin - 273.15) * 1.80 + 32
@@ -150,13 +148,18 @@ function AJAX(newCity) {
         "url": forecastURL,
         "method": "GET"
     }).then(function (resp2) {
-
         $("#break").text("5-Day Forecast:")
         $(".col-lg-2").remove();
 
         for (var i = 0; i < resp2.list.length; i++) {
             if (resp2.list[i].dt_txt.includes("12:00:00")) {
-
+                var date = resp2.list[i].dt_txt
+                // day number below \\
+                // date.slice(8,10)
+                // month number below \\
+                // date.slice(5,7)
+                // year \\
+                // date.slice(0,4)
                 var icon = resp2.list[i].weather[0].icon
                 var x = resp2.list[i].main.temp
                 var temp = ((x - 273.15) * 1.80 + 32).toFixed(2);
@@ -168,7 +171,7 @@ function AJAX(newCity) {
                 var humiP = $("<p>").text("Humidity: " + hum + "%")
                 var weatherIcon2 = $("<img>").addClass("weather-icon").height(50).width(50)
                 weatherIcon2.attr("src", "http://openweathermap.org/img/wn/" + icon + ".png")
-                var date = (resp2.list[i].dt_txt).slice(0, 10)
+                var date = moment().format(date.slice(5,7) + "/" + date.slice(8,10) + "/" + date.slice(0,4))
                 var dateP = $("<h5>").text("(" + date + ")")
                 div1.append(dateP, weatherIcon2, tempP, humiP)
             }
